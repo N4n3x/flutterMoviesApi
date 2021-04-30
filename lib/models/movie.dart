@@ -1,4 +1,6 @@
 
+import 'dart:convert';
+
 class Movie {
   final int movieId;
   final String movieTitle;
@@ -13,8 +15,8 @@ class Movie {
   static List<Movie> moviesFromApi(Map<String, dynamic> body){
     List<Movie> l =[];
     // Le body API nous retourne 4 noeud dont un qui est intéressant : results
-    Map<String, dynamic> results = body["results"];
-    results.forEach((key, value) {
+    List<dynamic> results = body["results"];
+    results.forEach((value) {
       Movie movie = Movie(
         movieId: value["id"],
         movieTitle: value["title"],

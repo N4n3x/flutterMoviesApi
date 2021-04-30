@@ -21,7 +21,7 @@ class ApiMovie{
 
   Future<Map<String, dynamic>> getPopular() async{
     http.Response response;
-    String completeUrl = Url + "/movie/popular?api_key" + Key + "&language=" + Lang;
+    String completeUrl = Url + "/movie/popular?api_key=" + Key + "&language=" + Lang;
     print(completeUrl);
 
     response = await http.get(Uri.parse(completeUrl));

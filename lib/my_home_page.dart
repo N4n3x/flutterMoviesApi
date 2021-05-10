@@ -30,6 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> getPopularMovies() async {
+    print("Coucou");
     ApiMovie api = ApiMovie();
     Map<String, dynamic> mapMovie = await api.getPopular();
     if(mapMovie["code"] == 0){
